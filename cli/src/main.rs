@@ -1,5 +1,5 @@
 extern crate clap;
-
+extern crate services;
 use clap::{Arg, App};
 
 fn main() {
@@ -11,5 +11,6 @@ fn main() {
             .required(true)
             .takes_value(true)).get_matches();
     let operation = matches.value_of("OPERATION").unwrap();
+    services::test();
     println!("my operation is {}", operation);
 }
