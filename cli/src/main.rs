@@ -1,6 +1,8 @@
 extern crate clap;
-extern crate services;
-use clap::{Arg, App};
+
+use clap::{App, Arg};
+
+mod project;
 
 fn main() {
     let matches = App::new("devel-up")
@@ -11,6 +13,8 @@ fn main() {
             .required(true)
             .takes_value(true)).get_matches();
     let operation = matches.value_of("OPERATION").unwrap();
-    services::test();
-    println!("my operation is {}", operation);
+    match operation {
+        "create" => project::create(),
+        _ => ()
+    }
 }
