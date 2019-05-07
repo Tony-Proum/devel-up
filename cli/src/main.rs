@@ -4,27 +4,12 @@ use std::str::FromStr;
 
 use clap::{App, Arg};
 
-
+use options::operation::Operation;
 use project::create;
 
 mod project;
+mod options;
 
-enum Operation {
-    Create,
-    Update,
-}
-
-impl FromStr for Operation {
-    type Err = ();
-
-    fn from_str(string: &str) -> Result<Self, Self::Err> {
-        match string {
-            "create" => Ok(Operation::Create),
-            "update" => Ok(Operation::Update),
-            _ => Err(())
-        }
-    }
-}
 
 fn main() {
     let matches = App::new("devel-up")

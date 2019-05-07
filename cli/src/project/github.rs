@@ -1,3 +1,17 @@
-pub fn get() {
-    println!("get github project");
+pub fn create(name: &str) -> &str {
+    println!("create a github project");
+    name
+}
+
+#[cfg(test)]
+mod tests {
+    use super::create;
+
+    #[test]
+    fn create_should_return_the_created_github_repository() {
+        // WHEN
+        let repository = create("my-repo");
+        // THEN
+        assert_eq!("my-repo", repository)
+    }
 }
