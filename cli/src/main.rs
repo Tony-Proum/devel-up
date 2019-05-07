@@ -1,8 +1,15 @@
 extern crate clap;
 
+use std::str::FromStr;
+
 use clap::{App, Arg};
 
+use options::operation::Operation;
+use project::create;
+
 mod project;
+mod options;
+
 
 fn main() {
     let matches = App::new("devel-up")
@@ -12,9 +19,9 @@ fn main() {
         .arg(Arg::with_name("OPERATION")
             .required(true)
             .takes_value(true)).get_matches();
-    let operation = matches.value_of("OPERATION").unwrap();
+    let operation: Operation = Operation::from_str(matches.value_of("OPERATION").unwrap()).unwrap();
     match operation {
-        "create" => project::create(),
-        _ => ()
+        Operation::Init => create(),
+        Operation::Update => println!("Update all")
     }
 }
