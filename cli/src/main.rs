@@ -5,7 +5,7 @@ use std::str::FromStr;
 use clap::{App, Arg};
 
 use options::operation::Operation;
-use project::create;
+use project::init;
 
 mod project;
 mod options;
@@ -21,7 +21,7 @@ fn main() {
             .takes_value(true)).get_matches();
     let operation: Operation = Operation::from_str(matches.value_of("OPERATION").unwrap()).unwrap();
     match operation {
-        Operation::Init => create(),
+        Operation::Init => init(),
         Operation::Update => println!("Update all")
     }
 }

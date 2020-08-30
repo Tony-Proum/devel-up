@@ -1,5 +1,6 @@
 mod init;
 
-pub fn create() {
-    init::init("my-repo");
+pub fn init() {
+    let project_name = init::init();
+    println!("{} was initialized successfully", project_name.unwrap())
 }
