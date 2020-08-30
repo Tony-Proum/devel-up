@@ -1,5 +1,5 @@
-mod github;
+mod init;
 
 pub fn create() {
-    github::create("my-repo");
+    init::init("my-repo");
 }

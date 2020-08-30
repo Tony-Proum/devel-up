@@ -21,7 +21,7 @@ fn main() {
             .takes_value(true)).get_matches();
     let operation: Operation = Operation::from_str(matches.value_of("OPERATION").unwrap()).unwrap();
     match operation {
-        Operation::Create => create(),
+        Operation::Init => create(),
         Operation::Update => println!("Update all")
     }
 }

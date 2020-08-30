@@ -4,4 +4,6 @@
 [link=https://travis-ci.org/Tony-Proum/devel-up/branches]
 image::https://travis-ci.org/Tony-Proum/devel-up.svg?branch=master[]
 
-Play with rust & helps to create integrated repositories.
+Play with rust & helps to build our projects easier.
+I'll try to remove some limitation of specific tools that I'm using for my day to day work using the speed of Rust.
+Not even certain on the point I'll be able to carry this project, but for now, I'm full of hope.

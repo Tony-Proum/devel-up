@@ -1,7 +1,7 @@
 use std::str::FromStr;
 
 pub enum Operation {
-    Create,
+    Init,
     Update,
 }
 
@@ -10,7 +10,7 @@ impl FromStr for Operation {
 
     fn from_str(string: &str) -> Result<Self, Self::Err> {
         match string {
-            "create" => Ok(Operation::Create),
+            "init" => Ok(Operation::Init),
             "update" => Ok(Operation::Update),
             _ => Err(())
         }
