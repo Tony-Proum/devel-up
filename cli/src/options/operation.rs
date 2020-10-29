@@ -12,7 +12,7 @@ impl FromStr for Operation {
         match string {
             "init" => Ok(Operation::Init),
             "update" => Ok(Operation::Update),
-            _ => Err(())
+            _ => Err(()),
         }
     }
 }
