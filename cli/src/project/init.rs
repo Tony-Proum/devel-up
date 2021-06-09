@@ -16,6 +16,17 @@ fn get_current_directory_name() -> String {
 mod tests {
 
     #[test]
+    fn get_current_directory_name_should_return_the_current_dir_name() {
+        use super::get_current_directory_name;
+        // GIVEN
+        assert!(std::env::set_current_dir("/tmp").is_ok());
+        // WHEN
+        let result = get_current_directory_name();
+        // THEN
+        assert_eq!("/tmp", result)
+    }
+
+    #[test]
     fn init_should_create_a_dot_devel_up_directory_in_current_dir() {
         use super::init;
         // GIVEN
@@ -39,16 +50,5 @@ mod tests {
         assert!(match result {
             _ => true,
         })
-    }
-
-    #[test]
-    fn create_should_return_the_created_github_repository() {
-        use super::get_current_directory_name;
-        // GIVEN
-        assert!(std::env::set_current_dir("/tmp").is_ok());
-        // WHEN
-        let result = get_current_directory_name();
-        // THEN
-        assert_eq!("/tmp", result)
     }
 }

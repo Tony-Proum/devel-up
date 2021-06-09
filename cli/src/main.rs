@@ -4,10 +4,10 @@ use std::str::FromStr;
 
 use clap::{App, Arg};
 
-use options::operation::Operation;
+use operations::operation::Operation;
 use project::init;
 
-mod options;
+mod operations;
 mod project;
 
 fn main() {
